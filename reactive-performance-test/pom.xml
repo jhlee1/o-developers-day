@@ -8,11 +8,11 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>lee.twoweeks</groupId>
-	<artifactId>kotlin-msa-reactive-example</artifactId>
+	<groupId>lee.joohan</groupId>
+	<artifactId>reactive-performance-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kotlin-msa-reactive-example</name>
-	<description>Spring Webflux example using kotlin</description>
+	<name>reactive-performance-test</name>
+	<description>Spring Webflux example using kotlin for performance test</description>
 
 	<properties>
 		<java.version>11</java.version>

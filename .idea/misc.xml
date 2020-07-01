@@ -5,7 +5,11 @@
       <list>
         <option value="$PROJECT_DIR$/kotlin-msa-reactive-example/pom.xml" />
         <option value="$PROJECT_DIR$/rest-mvc-performace-test/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-mvc-performance-test/pom.xml" />
+        <option value="$PROJECT_DIR$/reactive-performance-test/pom.xml" />
+        <option value="$PROJECT_DIR$/gatling-performance-test/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

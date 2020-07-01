@@ -2,23 +2,27 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rest-mvc-performace-test" />
         <module name="reactive-performance-test" />
+        <module name="gatling-performance-test" />
+        <module name="rest-mvc-performance-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gatling-maven-plugin-demo" target="1.8" />
+      <module name="gatling-performance-test" target="1.8" />
       <module name="reactive-performance-test" target="11" />
-      <module name="rest-mvc-performace-test" target="11" />
+      <module name="rest-mvc-performance-test" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="reactive-performance-test" options="-parameters" />
-      <module name="rest-mvc-performace-test" options="-parameters" />
+      <module name="rest-mvc-performance-test" options="-parameters" />
     </option>
   </component>
 </project>

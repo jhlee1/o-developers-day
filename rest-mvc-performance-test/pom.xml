@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lee.joohan</groupId>
-	<artifactId>rest-mvc-performace-test</artifactId>
+	<artifactId>rest-mvc-performance-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rest-mvc-performace-test</name>
-	<description>Demo project for Spring Boot</description>
+	<name>rest-mvc-performance-test</name>
+	<description>Demo project for Spring Boot to compare its performance with reactive one</description>
 
 	<properties>
 		<java.version>11</java.version>
