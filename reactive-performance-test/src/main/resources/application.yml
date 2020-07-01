@@ -1,0 +1,9 @@
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+  data:
+    mongodb:
+      uri: mongodb+srv://at-home:QS5adinS8noHzx93@springbootexample-nysvl.mongodb.net/kotlin-example?retryWrites=true&w=majority
+
+server:
+  port: 8080

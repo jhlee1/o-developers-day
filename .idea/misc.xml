@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/kotlin-msa-reactive-example/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-mvc-performace-test/pom.xml" />
+      </list>
+    </option>
+  </component>
+</project>
