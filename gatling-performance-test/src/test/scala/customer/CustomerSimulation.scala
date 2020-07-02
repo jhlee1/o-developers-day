@@ -11,19 +11,17 @@ class CustomerSimulation extends Simulation {
     .acceptLanguageHeader("en-US,en;q=0.5")
 
   val scn = scenario("Create and Delete Customer") // A scenario is a chain of requests and pauses
+    .exec(http("customer_list")
       .get("/customers"))
-    .exec(http("request_8")
-      .get("/computers?p=4"))
-    .pause(5)
-    .exec(http("request_9")
-      .get("/computers/new"))
     .pause(1)
-    .exec(http("request_10") // Here's an example of a POST request
-      .post("/computers")
-      .formParam("""name""", """Beautiful Computer""") // Note the triple double quotes: used in Scala for protecting a whole chain of characters (no need for backslash)
-      .formParam("""introduced""", """2012-05-30""")
-      .formParam("""discontinued""", """""")
-      .formParam("""company""", """37"""))
+    .exec(http("create customer")
+      .post("/customer"))
+    .pause(1)
+    .exec(http("r")
+      .post("/customer")
+      .formParam("""name""", """user1""") // Note the triple double quotes: used in Scala for protecting a whole chain of characters (no need for backslash)
+      .formParam("""email""", """user1@example.com"""))
+    .pause(1)
 
-  setUp(scn.inject(atOnceUsers(1)).protocols(httpProtocol))
+  setUp(scn.inject(atOnceUsers(10)).protocols(httpProtocol))
 }

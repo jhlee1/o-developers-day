@@ -1,0 +1,10 @@
+{
+  "simulation": "CustomerSimulation",
+  "simulationId": "customersimulation",
+  "start": 1593705362104,
+  "description": "",
+  "scenarios": ["Create and Delete Customer"],
+  "assertions": [
+
+  ]
+}
