@@ -2,7 +2,9 @@ package lee.joohan.reactive_performance_test.router
 
 import lee.joohan.reactive_performance_test.handler.CustomerRequestHandler
 import org.springframework.context.annotation.Bean
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
+import org.springframework.web.reactive.function.server.RequestPredicates
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.router
 
@@ -16,9 +18,9 @@ class CustomerRouter(val customerRequestHandler: CustomerRequestHandler) {
     @Bean
     fun customerRoutes(): RouterFunction<*> = router {
         "/customer".nest {
-            GET("/{id}", customerRequestHandler::get)
-            POST("/", customerRequestHandler::create)
-            DELETE("/{id}", customerRequestHandler::delete)
+            GET("/{id}", accept(MediaType.APPLICATION_JSON), customerRequestHandler::get)
+            POST("/", accept(MediaType.APPLICATION_JSON), customerRequestHandler::create)
+            DELETE("/{id}", accept(MediaType.APPLICATION_JSON), customerRequestHandler::delete)
         }
         "/customers".nest {
             GET("/", customerRequestHandler::search)

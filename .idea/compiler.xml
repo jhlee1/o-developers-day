@@ -7,8 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="reactive-performance-test" />
-        <module name="gatling-performance-test" />
         <module name="rest-mvc-performance-test" />
       </profile>
     </annotationProcessing>

@@ -8,6 +8,8 @@ import org.bson.types.ObjectId
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import reactor.core.scheduler.Scheduler
+import reactor.core.scheduler.Schedulers
 
 /**
  * Created by Joohan Lee on 2020/04/21
@@ -18,6 +20,7 @@ import reactor.core.publisher.Mono
 @Service
 class CustomerService(private val customerRepository: CustomerRepository) {
     fun getCustomer(id: String): Mono<Customer> = customerRepository.findById(ObjectId(id))
+            .subscribeOn(Schedulers.elastic())
             .switchIfEmpty(Mono.error(NotFoundCustomerException(id)))
 
     fun createCustomer(customer: Mono<CreateCustomerRequest>): Mono<Customer> = customer
