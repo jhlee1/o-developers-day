@@ -22,7 +22,7 @@ class CustomerRequestHandler(val customerService: CustomerService) {
             .onErrorResume { status(HttpStatus.NOT_FOUND).body(fromValue(ErrorResponse(404001, it.message.toString()))) }
 
     fun create(serverRequest: ServerRequest) = customerService.createCustomer(serverRequest.bodyToMono())
-            .flatMap { ok().bodyValue(true) }
+            .flatMap { ok().bodyValue(it) }
 
     fun delete(serverRequest: ServerRequest) = customerService.deleteCustomer(serverRequest.pathVariable("id"))
             .flatMap { ok().bodyValue(true) }

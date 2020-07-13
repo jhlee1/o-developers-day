@@ -17,4 +17,9 @@ class CustomerExample(HttpUser):
     def create_customer(self):
         body = CreateCustomerRequest(name="user1", email="user1@example.com")
 
-        self.client.post("/customer", data=json.dumps(body.__dict__), headers={"content-type": "application/json"})
+        response = self.client.post("/customer", data=json.dumps(body.__dict__), headers={"content-type": "application/json"})
+
+        created_customer_id = response.json()['id']
+
+        self.client.delete(f'/customer/{created_customer_id}')
+

@@ -2,6 +2,7 @@ package lee.joohan.restmvcperformancetest.controller
 
 import lee.joohan.restmvcperformancetest.dto.request.CreateCustomerRequest
 import lee.joohan.restmvcperformancetest.dto.response.CustomerResponse
+import lee.joohan.restmvcperformancetest.model.Customer
 import lee.joohan.restmvcperformancetest.service.CustomerService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -25,10 +26,8 @@ class CustomerController(val customerService: CustomerService) {
     }
 
     @PostMapping("/customer")
-    fun createCustomer(@RequestBody customerRequest: CreateCustomerRequest) : ResponseEntity<Boolean> {
-        val customer = customerService.createCustomer(customerRequest)
-
-        return ResponseEntity.ok(true)
+    fun createCustomer(@RequestBody customerRequest: CreateCustomerRequest) : ResponseEntity<Customer> {
+        return ResponseEntity.ok(customerService.createCustomer(customerRequest))
     }
 
     @DeleteMapping("/customer/{id}")
